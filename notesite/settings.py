@@ -27,7 +27,7 @@ SECRET_KEY = 'vd(w!)$j74aie_pzuy-b+tv-v%a(db=8mhfxpntppbbg*5ms4p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://notesappbyshivam.herokuapp.com/']
 
 
 # Application definition
