@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<style>
+input{
+	width:100%;
+}
+body{
+	background-color:rgba(170, 221, 228,0.5);
+}
+.head{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:50px;
+	background-color:rgba(0, 51, 0,0.8);
+	margin-top:0px;
+}
+.menu{
+	float:right;
+	bottom:0px;
+	font-size:20px;
+	margin:0px;
+	color:white;
+	padding:14px;
+	text-decoration:none;
+}
+.menu:hover{
+	background-color:black;
+}
+.foot{
+	background-color:rgba(0, 51, 0,0.8);
+	width:100%;
+	height:20px;
+	font-size:20px;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	text-align:center;
+	color:white;
+}
+</style>
+<body>
+    <div class="head">
+        <a class="menu" href="/signup" >New User</a>
+    </div><br /><br />
+<div width=50% style="width:25%;margin-left:auto;margin-right:auto;">
+<h2 style="text-align:center;">LOGIN</h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+</div>
+<div class="foot">
+	Copylefted by Shivam Bansal
+</div>
+</body>
+</html>

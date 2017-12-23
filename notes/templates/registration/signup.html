@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+<style>
+body{
+	background-color:rgba(170, 221, 228,0.5);
+	color:rgb(51, 102, 0);
+}
+.head{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:50px;
+	background-color:rgba(0, 51, 0,0.8);
+	margin-top:0px;
+}
+.menu{
+	float:right;
+	bottom:0px;
+	font-size:20px;
+	margin:0px;
+	color:white;
+	padding:14px;
+	text-decoration:none;
+}
+.menu:hover{
+	background-color:black;
+}
+.foot{
+	background-color:rgba(0, 51, 0,0.8);
+	width:100%;
+	height:20px;
+	font-size:20px;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	text-align:center;
+	color:white;
+}
+	
+</style>
+</head>
+<body>
+<div class="head">
+	<a class="menu" href="/login" >Login</a>
+</div><br /><br />
+<h2 style="color:rgb(51, 102, 0)">Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color:gray;">{{ field.help_text|safe }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+<div class="foot">
+	Copylefted by Shivam Bansal
+</div>
+</body>
+</html>
